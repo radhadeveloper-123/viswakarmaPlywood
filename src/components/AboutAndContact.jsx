@@ -28,8 +28,8 @@ export default function AboutAndContact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // WhatsApp par form data bhejane ka format
-    const phoneNumber = "6260885256"; // Apna WhatsApp number yahan daalein
+    // Visiting card wala official WhatsApp number
+    const phoneNumber = "918355892625"; 
     const text = `*New Inquiry From Website*\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Requirement:* ${formData.requirement}\n*Message:* ${formData.message}`;
     
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`, '_blank');
@@ -48,7 +48,7 @@ export default function AboutAndContact() {
               Why Choose Us
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
-              Trusted Plywood Supplier in Maharastra & thane Balkum
+              Trusted Plywood Supplier in Thane (W) & Maharashtra
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">
               We deliver uncompromised wood quality and reliable service to contractors, interior designers, and homeowners.
@@ -73,7 +73,7 @@ export default function AboutAndContact() {
               </div>
               <h3 className="text-lg font-bold text-slate-900 mb-2">Wholesale & Retail Prices</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Get direct factory and distributor rates without any hidden margins, perfect for bulk constructions.
+                Get direct distributor rates without any hidden margins, perfect for bulk constructions.
               </p>
             </div>
 
@@ -114,7 +114,7 @@ export default function AboutAndContact() {
               Building Trust in Wood & Hardware Since Years
             </h2>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              We are a trusted wholesale and retail destination for premium plywood, flush doors, blockboards, and decorative laminates. Serving local carpenters, interior builders, and infrastructure projects with honest pricing and superior wood durability.
+              Managed by <strong className="text-amber-300">Sunil R. Vishwakarma</strong>[cite: 2], we are a trusted wholesale and retail destination for Plywood, Laminates, Fancy Hardware, Modular Kitchens, and All Kinds of Interior and Furniture materials[cite: 2].
             </p>
 
             <div className="grid grid-cols-2 gap-6 pt-4">
@@ -131,7 +131,7 @@ export default function AboutAndContact() {
 
           <div className="bg-amber-900/40 p-8 rounded-3xl border border-amber-800/60 backdrop-blur-md space-y-6">
             <h3 className="text-xl font-bold text-amber-300 flex items-center">
-              <Building2 className="w-6 h-6 mr-2" /> Visit Our Warehouse / Shop
+              <Building2 className="w-6 h-6 mr-2" /> Visit Our Shop / Office
             </h3>
             <p className="text-slate-300 text-sm">
               Come explore our wide range of physical sample sheets, thickness options, and laminate shades directly at our outlet.
@@ -139,11 +139,11 @@ export default function AboutAndContact() {
             <div className="space-y-3 text-sm text-slate-200">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-                <span>Balkum Thane Road, Thane & Balkum, Maharastra</span>
+                <span>Shop no. 02, Nr. Piramal Vaikunth, Balkum Naka, Behind BMC Office, Thane (W) 400608[cite: 2]</span>
               </div>
               <div className="flex items-center space-x-3">
                 <PhoneCall className="w-5 h-5 text-amber-400 shrink-0" />
-                <span>+91 6260885256</span>
+                <span>+91 8355892625, 9004488775[cite: 2]</span>
               </div>
             </div>
           </div>
@@ -176,7 +176,7 @@ export default function AboutAndContact() {
                   </div>
                   <div>
                     <span className="text-xs text-slate-500 block">Call Us Anytime</span>
-                    <a href="tel:+919876543210" className="text-base font-bold text-slate-900 hover:text-amber-800">+91 6260885256</a>
+                    <a href="tel:+918355892625" className="text-base font-bold text-slate-900 hover:text-amber-800">+91 8355892625, 9004488775[cite: 2]</a>
                   </div>
                 </div>
 
@@ -185,8 +185,8 @@ export default function AboutAndContact() {
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-500 block">Email Address</span>
-                    <span className="text-base font-bold text-slate-900">vishwakarmasunil@gmail.com</span>
+                    <span className="text-xs text-slate-500 block">Proprietor Name</span>
+                    <span className="text-base font-bold text-slate-900">Sunil R. Vishwakarma[cite: 2]</span>
                   </div>
                 </div>
               </div>
@@ -237,12 +237,11 @@ export default function AboutAndContact() {
                     onChange={handleChange}
                     className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-800"
                   >
-                    <option value="Marine Plywood">Marine Plywood (IS:710)</option>
-                    <option value="BWR Grade Plywood">BWR Grade Plywood</option>
-                    <option value="MR Grade Plywood">MR Grade Plywood (Interior)</option>
-                    <option value="Blockboards & Doors">Blockboards & Doors</option>
-                    <option value="Laminates & Veneers">Laminates & Veneers</option>
-                    <option value="Full House / Bulk Order">Full House / Bulk Order</option>
+                    <option value="">-- Select Requirement --</option>
+                    <option value="Marine Plywood & Laminates">Marine Plywood & Laminates[cite: 2]</option>
+                    <option value="Fancy Hardware">Fancy Hardware[cite: 2]</option>
+                    <option value="Modular Kitchen">Modular Kitchen[cite: 2]</option>
+                    <option value="Interior And Furniture">Interior And Furniture[cite: 2]</option>
                   </select>
                 </div>
 
@@ -277,13 +276,11 @@ export default function AboutAndContact() {
       <footer className="bg-slate-900 text-slate-400 py-10 border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left space-y-4 sm:space-y-0">
           <div>
-            <span className="text-white font-bold text-lg block">Vishwakarma Plywood & Furniture</span>
-            <span className="text-xs text-slate-500">© {new Date().getFullYear()} All rights reserved. Built with React & Tailwind CSS.</span>
+            <span className="text-white font-bold text-lg block">Vishwakarma Plywood And Furniture</span>
+            <span className="text-xs text-slate-500">Proprietor: Sunil R. Vishwakarma | Thane (W)[cite: 2]</span>
           </div>
-          <div className="flex space-x-6 text-sm">
-            <a href="#home" className="hover:text-amber-400 transition">Privacy Policy</a>
-            <a href="#products" className="hover:text-amber-400 transition">Terms of Service</a>
-            <a href="#contact" className="hover:text-amber-400 transition">Support</a>
+          <div className="text-xs text-slate-400">
+            <span>📞 8355892625, 9004488775[cite: 2]</span>
           </div>
         </div>
       </footer>

@@ -14,7 +14,7 @@ import {
 export default function NavbarAndHero() {
   const [isOpen, setIsOpen] = useState(false);
   const handleWhatsAppClick = () => {
-    const phoneNumber = "6260885256";
+    const phoneNumber = "918355892625"; // Official WhatsApp number from visiting card
     const message = "Hello, I want to inquire about plywood products and pricing.";
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
   };
@@ -22,120 +22,124 @@ export default function NavbarAndHero() {
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800">
       
-      {/* ================= TOP BAR (Contact & Info) ================= */}
-      <div className="bg-amber-900 text-amber-100 text-xs sm:text-sm py-2 px-4 sm:px-8 flex justify-between items-center">
-        <div className="flex items-center space-x-4">
-          <span>📍 Maharastra thane balkum</span>
-          <span className="hidden sm:inline">|</span>
-          <span className="hidden sm:inline">🕒 Mon - Sat: 9:00 AM - 8:00 PM</span>
+      {/* ================= STICKY HEADER WRAPPER (Top Bar + Navbar) ================= */}
+      <div className="sticky top-0 z-50 shadow-md">
+        
+        {/* Top Bar */}
+        <div className="bg-amber-900 text-amber-100 text-xs sm:text-sm py-2 px-4 sm:px-8 flex justify-between items-center">
+          <div className="flex items-center space-x-4">
+            <span>📍 Thane (W), Balkum Naka, Maharashtra</span>
+            <span className="hidden sm:inline">|</span>
+            <span className="hidden sm:inline">🕒 Mon - Sat: 9:00 AM - 8:00 PM</span>
+          </div>
+          <div className="flex items-center space-x-4">
+            <a href="tel:+918355892625" className="flex items-center hover:text-white transition">
+              <PhoneCall className="w-3.5 h-3.5 mr-1" /> +91 8355892625, 9004488775
+            </a>
+          </div>
         </div>
-        <div className="flex items-center space-x-4">
-          <a href="tel:+919876543210" className="flex items-center hover:text-white transition">
-            <PhoneCall className="w-3.5 h-3.5 mr-1" /> +91 6260885256
-          </a>
-        </div>
-      </div>
 
-      {/* ================= NAVBAR ================= */}
-      <nav className="bg-white shadow-md sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 flex justify-between items-center h-20">
-          
-          {/* Brand Logo */}
-          <div className="flex items-center space-x-2 cursor-pointer">
-            <div className="bg-amber-800 p-2 rounded-lg text-white">
-              <Layers className="w-6 h-6" />
+        {/* Navbar */}
+        <nav className="bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-8 flex justify-between items-center h-20">
+            
+            {/* Brand Logo */}
+            <div className="flex items-center space-x-2 cursor-pointer">
+              <div className="bg-amber-800 p-2 rounded-lg text-white">
+                <Layers className="w-6 h-6" />
+              </div>
+              <div>
+                <span className="text-xl sm:text-2xl font-bold tracking-wide text-amber-900 block leading-tight">
+                  Vishwakarma Plywood
+                </span>
+                <span className="text-xs font-semibold text-amber-600 tracking-wider uppercase">
+                  And Furniture
+                </span>
+              </div>
             </div>
-            <div>
-              <span className="text-xl sm:text-2xl font-bold tracking-wide text-amber-900 block leading-tight">
-                Vishwakarma Rambadai
-              </span>
-              <span className="text-xs font-semibold text-amber-600 tracking-wider uppercase">
-                Plywood & Furniture
-              </span>
+
+            {/* Desktop Menu Links */}
+            <div className="hidden md:flex items-center space-x-8 font-medium text-slate-600">
+              <a href="#home" className="hover:text-amber-800 transition">Home</a>
+              <a href="#products" className="hover:text-amber-800 transition">Products</a>
+              <a href="#about" className="hover:text-amber-800 transition">About Us</a>
+              <a href="#features" className="hover:text-amber-800 transition">Why Us</a>
+              <a href="#contact" className="hover:text-amber-800 transition">Contact</a>
             </div>
-          </div>
 
-          {/* Desktop Menu Links */}
-          <div className="hidden md:flex items-center space-x-8 font-medium text-slate-600">
-            <a href="#home" className="hover:text-amber-800 transition">Home</a>
-            <a href="#products" className="hover:text-amber-800 transition">Products</a>
-            <a href="#about" className="hover:text-amber-800 transition">About Us</a>
-            <a href="#features" className="hover:text-amber-800 transition">Why Us</a>
-            <a href="#contact" className="hover:text-amber-800 transition">Contact</a>
-          </div>
-
-          {/* Action Button (Desktop) */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button 
-              onClick={handleWhatsAppClick}
-              className="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl font-medium flex items-center space-x-2 shadow-sm transition transform hover:-translate-y-0.5"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span>WhatsApp Chat</span>
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button 
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-700 hover:text-amber-800 focus:outline-none p-2"
-            >
-              {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Dropdown Menu */}
-        {isOpen && (
-          <div className="md:hidden bg-white border-t border-slate-100 px-4 pt-3 pb-5 space-y-3 shadow-lg">
-            <a 
-              href="#home" 
-              onClick={() => setIsOpen(false)}
-              className="block py-2 px-3 rounded-lg hover:bg-amber-50 font-medium text-slate-700"
-            >
-              Home
-            </a>
-            <a 
-              href="#products" 
-              onClick={() => setIsOpen(false)}
-              className="block py-2 px-3 rounded-lg hover:bg-amber-50 font-medium text-slate-700"
-            >
-              Products
-            </a>
-            <a 
-              href="#about" 
-              onClick={() => setIsOpen(false)}
-              className="block py-2 px-3 rounded-lg hover:bg-amber-50 font-medium text-slate-700"
-            >
-              About Us
-            </a>
-            <a 
-              href="#features" 
-              onClick={() => setIsOpen(false)}
-              className="block py-2 px-3 rounded-lg hover:bg-amber-50 font-medium text-slate-700"
-            >
-              Why Us
-            </a>
-            <a 
-              href="#contact" 
-              onClick={() => setIsOpen(false)}
-              className="block py-2 px-3 rounded-lg hover:bg-amber-50 font-medium text-slate-700"
-            >
-              Contact
-            </a>
-            <div className="pt-2">
+            {/* Action Button (Desktop) */}
+            <div className="hidden md:flex items-center space-x-4">
               <button 
                 onClick={handleWhatsAppClick}
-                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-xl font-medium flex items-center justify-center space-x-2 shadow"
+                className="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl font-medium flex items-center space-x-2 shadow-sm transition transform hover:-translate-y-0.5"
               >
                 <MessageCircle className="w-5 h-5" />
-                <span>Chat on WhatsApp</span>
+                <span>WhatsApp Chat</span>
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center">
+              <button 
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-slate-700 hover:text-amber-800 focus:outline-none p-2"
+              >
+                {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
               </button>
             </div>
           </div>
-        )}
-      </nav>
+
+          {/* Mobile Dropdown Menu */}
+          {isOpen && (
+            <div className="md:hidden bg-white border-t border-slate-100 px-4 pt-3 pb-5 space-y-3 shadow-lg">
+              <a 
+                href="#home" 
+                onClick={() => setIsOpen(false)}
+                className="block py-2 px-3 rounded-lg hover:bg-amber-50 font-medium text-slate-700"
+              >
+                Home
+              </a>
+              <a 
+                href="#products" 
+                onClick={() => setIsOpen(false)}
+                className="block py-2 px-3 rounded-lg hover:bg-amber-50 font-medium text-slate-700"
+              >
+                Products
+              </a>
+              <a 
+                href="#about" 
+                onClick={() => setIsOpen(false)}
+                className="block py-2 px-3 rounded-lg hover:bg-amber-50 font-medium text-slate-700"
+              >
+                About Us
+              </a>
+              <a 
+                href="#features" 
+                onClick={() => setIsOpen(false)}
+                className="block py-2 px-3 rounded-lg hover:bg-amber-50 font-medium text-slate-700"
+              >
+                Why Us
+              </a>
+              <a 
+                href="#contact" 
+                onClick={() => setIsOpen(false)}
+                className="block py-2 px-3 rounded-lg hover:bg-amber-50 font-medium text-slate-700"
+              >
+                Contact
+              </a>
+              <div className="pt-2">
+                <button 
+                  onClick={handleWhatsAppClick}
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-xl font-medium flex items-center justify-center space-x-2 shadow"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span>Chat on WhatsApp</span>
+                </button>
+              </div>
+            </div>
+          )}
+        </nav>
+      </div>
 
       {/* ================= HERO SECTION ================= */}
       <section id="home" className="relative bg-gradient-to-br from-amber-950 via-amber-900 to-amber-800 text-white py-20 lg:py-28 overflow-hidden">
@@ -147,7 +151,7 @@ export default function NavbarAndHero() {
           {/* Left Content */}
           <div className="space-y-6 text-center lg:text-left">
             <span className="inline-block bg-amber-800/80 text-amber-200 border border-amber-700 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">
-              ✨ Premium Quality Plywood & Hardware
+              ✨ Premium Plywood, Laminates & Hardware
             </span>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
@@ -155,7 +159,7 @@ export default function NavbarAndHero() {
             </h1>
             
             <p className="text-slate-200 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Discover 100% boiling waterproof (BWR) plywood, commercial grade plywood, flush doors, and designer laminates built for lifelong durability.
+              Managed by <strong className="text-amber-300">Sunil R. Vishwakarma</strong>, we offer best quality Plywood, Flush Doors, Modular Kitchens, and Fancy Hardware in Thane.
             </p>
 
             {/* Buttons */}
@@ -206,8 +210,8 @@ export default function NavbarAndHero() {
                 
                 <div className="h-56 bg-amber-950/60 rounded-xl flex flex-col items-center justify-center border border-amber-800/50 p-6">
                   <Layers className="w-20 h-20 text-amber-500 mb-3 animate-pulse" />
-                  <h3 className="text-xl font-bold text-white">Marine & BWR Plywood</h3>
-                  <p className="text-xs text-slate-400 mt-1">Available in 6mm, 12mm, 16mm & 19mm thickness</p>
+                  <h3 className="text-xl font-bold text-white">Marine Plywood & Hardware</h3>
+                  <p className="text-xs text-slate-400 mt-1">Available at Balkum Naka, Thane (W)</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3 text-left">
@@ -216,8 +220,8 @@ export default function NavbarAndHero() {
                     <span className="text-sm font-bold text-white">100% Protected</span>
                   </div>
                   <div className="bg-amber-900/40 p-3 rounded-lg border border-amber-800/40">
-                    <span className="block text-xs text-amber-300 font-semibold">Warranty</span>
-                    <span className="text-sm font-bold text-white">Up to 21 Years</span>
+                    <span className="block text-xs text-amber-300 font-semibold">Proprietor</span>
+                    <span className="text-sm font-bold text-white truncate block">Sunil R. V.</span>
                   </div>
                 </div>
 
